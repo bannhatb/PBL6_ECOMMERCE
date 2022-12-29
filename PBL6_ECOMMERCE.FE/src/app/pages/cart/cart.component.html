@@ -1,0 +1,157 @@
+<!-- <app-header></app-header> -->
+<!-- cart content begin -->
+
+<div class="cart">
+  <div class="cart-page">
+    <div class="breadcrumbs">
+      <a routerLink="" routerLinkActive="router-link-active" >&nbsp; Home</a>
+      <p style="color:white">&nbsp;/&nbsp;</p>
+      <a style="color:white">Cart</a>
+    </div>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-lg-11" >
+                <div class="cart-page-inner">
+                    <div class="thead-title">
+                      <p><span ></span><span style="padding-left:5%;" >Sản phẩm</span><span style="padding-left:50%;">Đơn giá</span><span style="padding-left:10%;">Số lượng</span><span style="padding-left:5%;">Số tiền</span><span style="padding-left:5%;">Xóa</span></p>
+                    </div>
+                    <div class="table-responsive" *ngFor="let pdShop of listPdShop; let i = index">
+                        <table class="table table-bordered" >
+                            <thead class="thead-dark">
+                              <tr>
+                                <th style="width: 5%;"></th>
+                                <th style="width: 55%;"></th>
+                                <th style="width: 15%;"></th>
+                                <th style="width: 10%;"></th>
+                                <th style="width: 10%;"></th>
+                                <th style="width: 5%;"></th>
+                              </tr>
+                            </thead>
+                              <tbody class="align-middle" *ngFor="let pd of pdShop; let j = index">
+                                <tr>
+                                  <td>
+                                    <input type="checkbox"  style="margin-left: 45%;" [(ngModel)]="isChecked[i][j]" (change)="checkValue(i,j,pd)">
+                                  </td>
+                                  <td id="td-image">
+                                    <div class="pd-image">
+                                      <a href="#"><img src={{pd.urlImage}} alt="Image"></a>
+                                      <p>{{pd.nameProduct}}</p>
+                                    </div>
+                                </td>
+                                <td><del style="color: gray;">{{pd.initialPrice| currency: "VND"}}</del>&nbsp;{{pd.price| currency: "VND"}}</td>
+                                <td>
+                                    <div class="qty">
+                                        <button class="btn-minus" (click)="decreaseQty(pd,i,j)" ><b>-</b></button>
+                                        <input type="text" [(ngModel)]="pd.amount" readonly>
+                                        <button class="btn-plus" (click)="increaseQty(pd,i,j)"><b>+</b></button>
+                                    </div>
+                                </td>
+                                <td>{{pd.price*pd.amount| currency : "VND"}}</td>
+                                <td><button (click)="deleteItem(pd,i)"><i class="bi bi-trash"></i></button></td>
+                                </tr>
+                              </tbody>
+                        </table>
+                        <div class="voucherShop">
+                          <div class="voucher_content">
+                            <i class="bi bi-ticket"></i><p>Shop voucher với nhiều giá sốc </p>
+                            <!-- <button class="btn btn-outline-primary mb-2 me-2" (click)="openVerticallyCentered(content)">
+                              Modal vertically centered
+                            </button> -->
+                            <p (click)="openModalShopVoucher(contentShopVoucher,arrShopId[i])" style="color: rgb(78, 78, 233);">Xem thêm Voucher</p>
+                          </div>
+                        </div>
+                        <br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--
+        <div class="delivery">
+          <div class="delivery_content">
+            <i class="bi bi-truck"></i><p>Giảm ₫15.000 phí vận chuyển đơn tối thiểu ₫50.000; Giảm ₫25.000 phí vận chuyển đơn tối thiểu ₫99.000</p>
+            <p class="list_voucher">tìm hiểu thêm</p>
+          </div>
+        </div> -->
+        <div class="order">
+          <div class="order_voucher">
+            <i class="bi bi-ticket"></i><p>MANBUYA Voucher</p>
+            <p (click)="openModalOrderVoucher(contentOrderVoucher)" style="color: rgb(78, 78, 233);">Xem thêm Voucher</p>
+          </div>
+          <div class="order_btn">
+            <p class="sum_price">Tổng thanh toán: {{sumPrice|currency : "VND"}}</p>
+            <div class="btn_wrapped">
+              <button (click)="check(order)" [disabled]=" (this.sumPrice == 0) ? 'disabled': null">Mua hàng</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- cart content end -->
+<!-- <app-footer></app-footer> -->
+
+<!-- shop-voucher -->
+
+<ng-template #contentShopVoucher let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Voucher Shop</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')" hidden=true></button>
+	</div>
+	<div class="modal-body">
+		<!-- <p>One fine body&hellip;</p> -->
+    <div class="load-voucher" *ngFor="let voucher of vouchers">
+      <div class="row voucher-border">
+        <div class="col-md-3">
+          <div class="img-shop">
+            <img src="https://static.vecteezy.com/system/resources/previews/010/979/400/original/discount-voucher-3d-illustration-png.png" alt="">
+          </div>
+        </div>
+        <div class="col-md list-voucher" >
+          <div class="content-voucher">
+            <p>Giảm {{voucher.value | currency: "VND"}}</p>
+          <p>Đơn tối thiểu {{voucher.minPrice | currency: "VND"}}</p>
+          <p style="font-size: 10px;">HSD: {{voucher.expired}}</p>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Trở lại</button>
+	</div>
+</ng-template>
+
+
+
+<!-- order-voucher -->
+<ng-template #contentOrderVoucher let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Voucher MANBUYA</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')" hidden=true></button>
+	</div>
+	<div class="modal-body" >
+		<!-- <p>One fine body&hellip;</p> -->
+    <div class="load-voucher" *ngFor="let voucher of orderVouchers">
+      <div class="row voucher-border">
+        <div class="col-md-3">
+          <div class="img-shop">
+            <img src="https://static.vecteezy.com/system/resources/previews/010/979/400/original/discount-voucher-3d-illustration-png.png" alt="">
+          </div>
+        </div>
+        <div class="col-md list-voucher" >
+          <div class="content-voucher">
+            <p>Giảm {{voucher.value | currency: "VND"}}</p>
+          <p>Đơn tối thiểu {{voucher.minPrice | currency: "VND"}}</p>
+          <p style="font-size: 10px;">HSD: {{voucher.expired}}</p>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Trở lại</button>
+	</div>
+</ng-template>

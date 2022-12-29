@@ -1,0 +1,95 @@
+.header-content{
+  background-color: rgb(30, 69, 105);
+  padding-top: 2%;
+  padding-bottom  : 2%;
+  color: white;
+}
+
+.header-logo{
+  margin-left: 10%;
+  display:inline-block;
+}
+.header-logo>b>img{
+  width: 60px;
+}
+
+.register-text{
+  margin-left: 5%;
+  display:inline-block;
+  font-size: 20px;
+}
+
+.body-content{
+  background-image: url("http://file.hstatic.net/1000402464/collection/banner_web-new-3-01_39c842661b94494889a4bb8e460b47e8.jpg");
+  height: 700px;
+  position:relative;
+  background-size: 1500px;
+}
+
+.form-area{
+  position: absolute;
+  left: 60%;
+  top: 10%;
+  right: 10%;
+  background-color: white;
+  border-radius: 2%;
+  height: 60%;
+  opacity: 0.7;
+}
+h2{
+  margin-top: 5%;
+  margin-left: 5%;
+}
+.username{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.password{
+  padding-bottom: 5%;
+}
+input{
+  margin-left: 5%;
+  width: 90%;
+  padding-top:2%;
+  padding-bottom: 2%;
+  padding-left: 3% ;
+}
+
+input :focus{
+  outline: none;
+}
+.submit-btn{
+  margin-left: 5%;
+  width: 90%;
+  padding-top:2%;
+  padding-bottom: 2%;
+  padding-left: 3% ;
+  background-color: rgb(30, 69, 105);
+  color:white;
+  border : none;
+  border-radius: 2%;
+}
+.submit-btn :hover{
+  opacity: 0.5;
+}
+small{
+  margin-left: 5%;
+  width: 90%;
+  padding-top:2%;
+  padding-left: 0%;
+  color: red;
+}
+
+
+
+.gender> p{
+  margin-left: 5%;
+}
+.gender>input {
+  width: 10%;
+}
+
+.gender >label, g.gender>input {
+  display: inline-block;
+}

@@ -1,0 +1,98 @@
+<div class = "title">
+  <span>Danh sách đơn hàng</span>
+</div>
+<div class = "line"></div>
+<div class = "mode-view">
+    <div class = "mode-button">
+        <button class = "view-all" (click) = "viewall()" >Tất cả</button>
+        <button class = "view-stocking" (click) = "viewstock()">Đơn mới</button>
+        <button class = "view-out-of-stock" (click) = "viewoutofstock()" >Đã bán</button>
+    </div>
+    <div class = "search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder = "Tìm kiếm">
+    </div>
+</div>
+<div class = "list-product-of-shop">
+    <div>
+    <table class="data">
+        <tr>
+          <th>STT</th>
+          <th>Id</th>
+          <th>Tên sản phẩm</th>
+          <th>Size</th>
+          <th>Color</th>
+          <th>Số lượng</th>
+          <th>Ngày Đặt</th>
+          <th>Giảm giá</th>
+          <th>Ghi chú</th>
+          <th>Xác nhận</th>
+          <th>Giá</th>
+          <th>Trạng thái</th>
+        </tr>
+        <tr  *ngFor = "let OrderDetail of orderdetailsData  | paginate: {
+          itemsPerPage: pageSize,
+          currentPage: page};let i = index ">
+          <td>{{i+1}}</td>
+          <td>{{OrderDetail.orderId}}</td>
+          <td>{{OrderDetail.name}}</td>
+          <td>{{OrderDetail.size}}</td>
+          <td>{{OrderDetail.color}}</td>
+          <td>{{OrderDetail.amount}}</td>
+          <td>{{(OrderDetail.createAt == null) ? 'null':OrderDetail.createAt}}</td>
+          <td>{{OrderDetail.discountShop}}</td>
+          <td>{{OrderDetail.note}}</td>
+          <td>{{OrderDetail.confirmAt}}</td>
+          <td>{{OrderDetail.price}}</td>
+          <td>{{(OrderDetail.sate)}}</td>
+          <td class = "mode">
+            <button (click) = "mode = i"
+            data-mdb-toogle = "dropdown"
+            aria-expanded = "false">
+            <i class="bi bi-arrow-right-square"></i></button>
+            <ul *ngIf="i == mode" class="account-dropdown" class = "account-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                <li><button>Confirm</button></li>
+                <li><button>Send</button></li>
+            </ul>
+          </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <div id="pagination" class="col-md-12">
+                <pagination-controls
+                  previousLabel=""
+                  nextLabel=""
+                  (pageChange)="handlePageChange($event)"
+                ></pagination-controls>
+              </div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+      </table>
+
+    </div>
+
+</div>
+<ng-template #longContent let-modal>
+  <div class="modal-header">
+		<h4 class="modal-title">Chi tiết sản phẩm</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+
+  <div class="modal-body">
+    <div class = "edit-product">
+      <app-product-detail></app-product-detail>
+    </div>
+  </div>
+</ng-template>

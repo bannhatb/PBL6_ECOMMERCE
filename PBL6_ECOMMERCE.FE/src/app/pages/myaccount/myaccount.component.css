@@ -1,0 +1,69 @@
+
+.user{
+  display: inline-block;
+}
+.account-avatar{
+  display: inline-block;
+}
+
+.account-avatar>img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.account-name{
+  display: inline-block;
+}
+.username{
+  margin-left: 10px;
+}
+
+.my-account>p{
+
+}
+
+.my-account>p:hover{
+  color: rgb(46, 115, 176);
+}
+.my-account>p>i{
+  color: blue;
+}
+
+.my-account-list{
+  margin-left: 25px;
+}
+.my-account-list>div{
+  margin-top: 15px;
+}
+.info:hover{
+  color: rgb(46, 115, 176);
+}
+
+.address:hover{
+  color: rgb(46, 115, 176);
+}
+
+.change-password:hover{
+  color: rgb(46, 115, 176);
+}
+
+
+.oder{
+  margin-top: 10px;
+}
+.oder>p>i{
+  color: rgb(228, 225, 28);
+}
+
+.oder:hover{
+  color: rgb(46, 115, 176);
+}
+
+.voucher>p>i{
+  color: rgb(236, 60, 17);
+}
+
+.voucher:hover{
+  color:  rgb(46, 115, 176);
+}

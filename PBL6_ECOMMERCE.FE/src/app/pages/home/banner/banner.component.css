@@ -1,0 +1,8 @@
+.container-banner >img{
+  padding-right: 55%;
+  /* width: auto; */
+  /* max-width: 300px; */
+  width: 180%;
+  height: auto;
+
+}

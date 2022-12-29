@@ -1,0 +1,45 @@
+<div class="header">
+  <div class="header-content">
+    <div class="header-logo">
+      <b routerLink=""><img src="assets/img/logo_login.png" alt=""></b>
+    </div>
+    <div class="register-text">
+        Đăng kí
+    </div>
+  </div>
+</div>
+<div class="signup-body">
+  <div class="body-content">
+    <div class="form-area">
+      <form action="" id="registerForm" (ngSubmit)="register()" #registerForm="ngForm">
+        <h2>Đăng kí</h2>
+        <div class="username">
+          <input type="text"id="username" name="username" ngModel [(ngModel)]="registerUser.username" #username="ngModel"  placeholder="Tên đăng nhập"  >
+          <small *ngIf="username.invalid && (username.touched || username.dirty)" >Mật khẩu sai hoặc còn trống</small>
+        </div>
+        <p></p>
+        <div class="password">
+          <input  type="password" id="password" name="password" ngModel [(ngModel)]="registerUser.password" #password="ngModel" placeholder="Mật khẩu">
+          <small *ngIf="password.invalid && (password.touched || password.dirty)">Mật khẩu sai hoặc còn trống</small>
+        </div>
+        <div class="password">
+          <input  type="password" id="verifyPassword" name="verifyPassword" ngModel [(ngModel)]="registerUser.verifyPassword" #verifyPassword="ngModel" placeholder="Xác nhận mật khẩu">
+          <small *ngIf="verifyPassword.invalid && (verifyPassword.touched || verifyPassword.dirty)">Mật khẩu sai hoặc còn trống</small>
+        </div>
+        <div class="email">
+          <input  type="email" id="email" name="email" ngModel [(ngModel)]="registerUser.email" #email="ngModel" placeholder="Email">
+          <small *ngIf="email.invalid && (email.touched || email  .dirty)">Mật khẩu sai hoặc còn trống</small>
+        </div>
+        <div class="gender">
+          <p>Giới tính  </p>
+          <input type="radio" id="men" name="gender" [(ngModel)]="gender" value=true>
+          <label for="html">Nam</label>
+          <input type="radio" id="women" name="gender" [(ngModel)]="gender" value=false>
+          <label for="women">Nữ</label>
+        </div>
+        <button  class="submit-btn" type="submit" value="Submit" >ĐĂNG KÍ</button>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

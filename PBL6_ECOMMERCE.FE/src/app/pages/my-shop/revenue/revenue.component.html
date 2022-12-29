@@ -1,0 +1,81 @@
+<div class = "title">
+    <span>Doanh thu</span>
+  </div>
+  <div class = "line"></div>
+  <div class = "mode-view">
+      <div class = "mode-button">
+          
+      </div>
+      <div class = "search">
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder = "Tìm kiếm">
+      </div>
+  </div>
+  <div class = "list-product-of-shop">
+      <div> 
+      <table class="data">
+          <tr>
+            <th>STT</th>
+            <th>Id</th>
+            <th>Tên sản phẩm</th>
+            <th>Size</th>
+            <th>Color</th>
+            <th>Đã Đặt</th>
+            <th>Đã Bán</th>
+            <th>Tồn kho</th>
+          </tr>
+          <tr *ngFor = "let productdetail of productdetails; let i = index">
+            <th>{{i+1}}</th>
+            <th>{{productdetail.id}}</th>
+            <th>{{productdetail.name}}</th>
+            <th>{{productdetail.size}}</th>
+            <th>{{productdetail.color}}</th>
+            <th>{{productdetail.booked}}</th>
+            <th>{{productdetail.sold}}</th>
+            <th>{{productdetail.inventory}}</th>
+          </tr>
+          <!-- <tr  *ngFor = "let OrderDetail of orderdetails; let i = index">
+            <td>{{i}}</td>
+            <td>{{OrderDetail.orderId}}</td>
+            <td>{{OrderDetail.name}}</td>
+            <td>{{OrderDetail.size}}</td>
+            <td>{{OrderDetail.color}}</td>
+            <td>{{OrderDetail.amount}}</td>
+            <td>{{(OrderDetail.createAt == null) ? 'null':OrderDetail.createAt}}</td>
+            <td>{{OrderDetail.discountShop}}</td>
+            <td>{{OrderDetail.note}}</td>
+            <td>{{OrderDetail.confirmAt}}</td>
+            <td>{{OrderDetail.price}}</td>  
+            <td>{{(OrderDetail.sate)}}</td>
+            <td class = "mode">
+              <button (click) = "mode = !mode"
+              data-mdb-toogle = "dropdown"
+              aria-expanded = "false">
+              <i class="bi bi-arrow-right-square"></i></button>
+              <ul *ngIf="modeOpen(OrderDetail.orderId)" class="account-dropdown" class = "account-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">My profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </td>  
+                
+            </tr> -->
+          
+        </table>
+  
+      </div>
+  
+  </div>
+  <ng-template #longContent let-modal>
+    <div class="modal-header">
+          <h4 class="modal-title">Chi tiết sản phẩm</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+  
+    <div class="modal-body">
+      <div class = "edit-product">
+        <app-product-detail></app-product-detail>
+      </div>
+    </div>
+  </ng-template>
+  

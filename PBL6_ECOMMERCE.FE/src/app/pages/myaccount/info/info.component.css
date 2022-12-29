@@ -1,0 +1,123 @@
+
+.content{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.info-title> hr{
+  width: 90%;
+  margin-left: 5px;
+}
+
+
+.info-detail{
+  position: relative;
+}
+.text-info {
+  position: absolute;
+  width: 70% ;
+  left: 0%;
+  color: black;
+}
+
+.avatar{
+  position: absolute;
+  width: 30%;
+  /* background-color: blue; */
+  left : 70%;
+}
+
+.text-fill{
+  margin-bottom: 30px;
+}
+.text-fill>label,.text-fill>div {
+  display: inline-block;
+}
+
+.text-fill>label{
+  width: 150px;
+  text-align: right;
+}
+.text-fill>div{
+  margin-left: 20px;
+}
+.content-line>input:focus{
+  outline: none;
+}
+
+#women{
+  margin-left: 30px;
+}
+
+#btn.info{
+
+}
+
+
+.avatar> img{
+  margin-left: 10%;
+  height: 100px;
+  width: 100px;;
+  border-radius: 50%;
+}
+
+.choose-file{
+  margin-top: 30px;
+  display: block;
+  width: 150px;
+  height: 40px;
+  border-color:gray ;
+  border-width: 0.5px;
+  border-radius: 5px;
+  background-color: white;
+}
+.choose-file>input{
+  visibility:hidden;
+}
+
+.choose-file{
+  background-color: rgb(30, 69, 105);
+  color: white;
+}
+.btn{
+  color: white;
+}
+
+.submit-btn{
+  margin-left: 20%;
+  margin-top: 350px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100px;
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: rgb(30, 69, 105);
+  color : white;
+}
+
+.submit-btn:hover{
+  background-color: white;
+  color: rgb(30, 69, 105);;
+}
+
+#day{
+  width: 100px;
+  height: 30px;
+}
+
+#month{
+  margin-left: 20px;
+  width: 120px;
+  height: 30px;
+}
+#year{
+  margin-left: 20px;
+  width: 120px;
+  height: 30px;
+}
+
+:focus-visible{
+  outline: none !important;
+}
+

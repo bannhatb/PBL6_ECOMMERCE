@@ -1,0 +1,236 @@
+.content{
+  width: 800px ;
+}
+
+.myorder-seletion{
+/* background-color: red; */
+}
+
+.selection{
+display: inline-block;
+padding-top: 15px;
+padding-bottom: 15px;
+width: 150px;
+text-align: center;
+}
+
+.default{
+
+}
+.sent{
+border-bottom: solid rgb(30, 69, 105);
+}
+.confirm{
+border-bottom: solid rgb(30, 69, 105);
+}
+.delivering{
+border-bottom: solid rgb(30, 69, 105);
+}
+.received{
+border-bottom: solid rgb(30, 69, 105);
+}
+.cancalled{
+border-bottom: solid rgb(30, 69, 105);
+}
+
+
+.content{
+margin-top: 30px;
+/* background-color: red; */
+}
+
+.order{
+  margin-left: 70px;
+  margin-right: 70px;
+  /* background-color: gray; */
+}
+
+
+.content>p{
+
+}
+.address{
+  margin:  30px 30px 30px 30px;
+  /* background-color: gray; */
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+
+  border: solid;
+  border-width: 1px;
+}
+.address>p{
+
+}
+.fa-map-marker{
+  font-weight: bold;
+  display: inline;
+}
+.address-title{
+  margin-left: 10px;
+  display: inline;
+  font-weight: bold;
+}
+.username{
+  font-weight: bold;
+  display: inline;
+  margin-left: 15px;
+}
+.home-address{
+  padding-left: 100px;
+  display: inline;
+}
+
+.order-detail{
+  margin:  30px 30px 30px 30px;
+  /* border: solid; */
+  border-width: 1px;
+}
+
+.container-fluid{
+  margin-left: 2%;
+  position: relative;
+}
+
+table{
+  border: none;
+}
+
+td{
+  border: none;
+}
+tr{
+  border: none;
+}
+#td-image{
+  width: 300px;
+}
+
+
+.align-middle{
+  position: relative;
+  width: 200px;
+  border: none;
+}
+
+th{
+  text-align:left;
+  /* background-color: rgb(30, 69, 105); */
+  color:rgb(30, 69, 105);
+  border: none;
+}
+.pd-image{
+  position: observe;
+  object-fit: fill;
+  width: 400px;
+}
+.pd-image>p{
+  padding-left: 40px ;
+  width: 350px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline;
+}
+.pd-image >a>img{
+  width: 50px;
+  display: inline;
+  float: left;
+
+}
+.pd-image >a{
+  display: inline-block;
+  float: left;
+
+}
+.pd-image >p{
+  display: inline;
+  display: inline-block;
+  /* float: left; */
+
+}
+/* p{
+  color: red;
+} */
+.qty > p{
+  text-align: center;
+  color :rgb(30, 69, 105);
+  padding-top: 15px;
+}
+
+.cart-content >p{
+  position: relative ;
+}
+
+.cart-content>p>span,.cart-content>h2>span{
+  position: observe;
+  right: 0%;
+  box-align: right;
+  /* color :red; */
+  text-align: right;
+}
+
+.payment{
+  padding-top: 50px;
+
+}
+.payment-method{
+  text-align: right;
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  /* margin-right: 90px; */
+  /* margin-right: 30px; */
+}
+.payment-method>p{
+  display: inline;
+  margin-left: 20px;
+
+}
+.payment-title{
+  text-align: left;
+}
+
+
+.order_btn{
+  padding-left: 2%;
+  /* margin-right: 20px; */
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  text-align: right;
+}
+
+.order_btn>i,.order_btn>p{
+  padding-top: 10px;
+  display: inline-block;
+  margin-right: 3%;
+  font-size: 15px;
+}
+.btn_wrapped{
+  margin-right: 10%;
+  margin-bottom: 1%;
+}
+.btn_wrapped>button{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  zoom: 150%;
+  background-color: rgb(30, 69, 105); ;
+  border: none ;
+  font-size: 10px;
+  color: white;
+}
+
+.btn_wrapped>button:hover{
+  background-color: white;
+  color: rgb(30, 69, 105);
+  border: solid;
+  border-width: 1px;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-color: rgb(30, 69, 105);
+}

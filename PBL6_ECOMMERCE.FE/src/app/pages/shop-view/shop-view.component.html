@@ -1,0 +1,49 @@
+<!-- <app-header></app-header> -->
+<div class="shop-view">
+  <div class="content">
+    <div class="shop-overview">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="avatar-shop">
+            <div class="avatar">
+              <img src="https://i.pinimg.com/736x/06/12/23/0612238c2c3f67edec6b07f87a26e258.jpg" alt="">
+            </div>
+            <div class="shop-name">
+              SHOP DOREMON
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="shop-indicator">
+            <div><i class="bi bi-shop" style="display: inline-block;"></i>&nbsp; Số sản phẩm : <p style="color:rgb(232, 176, 21);display: inline-block; ">34</p></div>
+            <div><i class="bi bi-star" style="display: inline-block;"></i>&nbsp; Đánh giá : <p style="color:rgb(232, 176, 21);display: inline-block; ">3.4(100 đánh giá)</p></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="shop-info">
+            <div><i class="bi bi-telephone" style="display: inline-block;"></i>&nbsp; Số điện thoại : <p style="color:rgb(232, 176, 21);display: inline-block; ">0905123456</p></div>
+            <div><i class="bi bi-envelope"style="display: inline-block;"></i>&nbsp; Email : <p style="color:rgb(232, 176, 21);display: inline-block;">Doremon123@gmail.com</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shop-product">
+      <div class="list-shop-product">
+        <div class="list-title">
+          <p>Sản phẩm của shop</p>
+        </div>
+        <div class="list-product">
+          <div class="row">
+            <div class="col-lg-3 mt-3 pb-5" *ngFor="let product of products; let i=index">
+              <div class="pd-wrapper" *ngIf="i<20">
+                <app-product [product]="product">
+                </app-product>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <app-footer></app-footer> -->

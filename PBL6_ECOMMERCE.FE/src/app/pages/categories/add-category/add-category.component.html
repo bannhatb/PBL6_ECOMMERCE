@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submitData()">
+        <div class="form-group">
+            <label for="name">CategoryName</label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+            <p class="text-muted" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                <span *ngIf="name?.errors?.['required']">
+              name is required
+              </span>
+                <span *ngIf="name?.errors?.['minlength']">
+                min length of name is 2
+              </span>
+                <span *ngIf="name?.errors?.['maxlength']">
+                max length of name is 100
+              </span>
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary my-3 me-3" [disabled]="form.invalid">
+        Save
+      </button>
+        <button class="btn btn-outline-danger" type="button">Cancel</button>
+    </form>
+</div>

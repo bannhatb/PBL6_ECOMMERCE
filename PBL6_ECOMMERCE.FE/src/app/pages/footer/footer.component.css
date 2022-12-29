@@ -1,0 +1,55 @@
+.footer-overall
+{
+  position: sticky;
+  background-color: rgb(176, 168, 168);
+  top: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+hr
+{
+  color: blue;
+  height: 5px;
+
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  height: 300px; /* Should be removed. Only for demonstration */
+  text-align:leftr;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+
+}
+.column-content
+{
+  margin-left: 40px;
+}
+a
+{
+  color: black;
+  text-decoration: none;
+  cursor: auto;
+}
+a:hover
+{
+  color: #3333ff;
+}
+h2{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.electric-wallet
+{
+  height: 30px;
+  width: 50px;
+}

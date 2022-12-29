@@ -1,0 +1,13 @@
+<div class="card" routerLink="/product-detail/{{product.id}}">
+  <div class="card-body">
+      <div class="pi-img-wrapper">
+          <img src="{{product.imageURL}}" alt="">
+      </div>
+      <p class="pd-name mt-3 mb-3" routerLink="Detail">{{product.name}}</p>
+  </div>
+  <div class="card-footer">
+    <del style="color: gray;">{{ product.initialPrice | currency: "VND" }}</del><br>
+      <p class="pd-price">{{product.price | currency : "VND"}}&nbsp;</p>
+      <button type="button" class="btn btn-secondary">Add to cart</button>
+  </div>
+</div>

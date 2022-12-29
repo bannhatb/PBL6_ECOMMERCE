@@ -1,0 +1,51 @@
+<!-- <app-header></app-header> -->
+
+<div class="search-content">
+  <div class="banner-search">
+    <img src="https://routine.vn/media/catalog/category/_o_Nam.png" alt="">
+  </div>
+  <div class="breadcrumbs">
+    <a routerLink="" routerLinkActive="router-link-active" >Home</a>
+    <p style="color: white;">&nbsp;/&nbsp;</p>
+    <a >{{category}}</a>
+  </div>
+  <div class="content">
+    <div class="list">
+      <img src="https://theme.hstatic.net/200000053174/1000840984/14/home_product_image_3.jpg?v=7126" alt="">
+    </div>
+    <div class="list-product">
+      <div class="title-result">
+        <h2>Kết quả của {{category}}</h2>
+      </div>
+
+      <div class="sort">
+        <label for="cars">Sắp xếp :</label>
+        <select id="cars" #target (change)="onChange(target.value)">
+          <option value="price-low-to-high" >Theo giá (thấp > cao)</option>
+          <option value="price-high-to-low">Theo giá (cao > thấp)</option>
+        </select>
+      </div>
+      <div class="container" mt-4 mb-4>
+        <div class="row">
+          <div class="col-md-4 mt-3" *ngFor="let data of productData| orderBy: key : reverse| paginate: {
+          itemsPerPage: pageSize,
+          currentPage: page}">
+              <div class="pd-wrapper">
+                <app-product [product] = data ></app-product>
+              </div>
+         </div>
+        </div>
+      <div id="pagination" class="col-md-12">
+        <pagination-controls
+          previousLabel=""
+          nextLabel=""
+          (pageChange)="handlePageChange($event)"
+        ></pagination-controls>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-brand></app-brand>
+<!-- <app-footer></app-footer> -->

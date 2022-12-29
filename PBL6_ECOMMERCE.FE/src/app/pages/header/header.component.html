@@ -1,0 +1,60 @@
+<div class="pre-header">
+    <div class="account-status">
+        <ul class="account-isactived" *ngIf="(active == true) || (accountService.currentUser$ | async);else other_content" active="false">
+            <li><a routerLink="myshop">Cửa hàng của tôi</a></li>
+            <!-- <li><a routerLink="login">Tài khoản :{{ (accountService.currentUser$ | async)?.username }}{{username}}</a></li> -->
+            <li><a routerLink="/myaccount">Tài khoản của tôi</a></li>
+            <li><a routerLink="" (click)="logout()">Đăng xuất</a></li>
+        </ul>
+        <ng-template #other_content>
+            <ul class="account-nonactived">
+                <li><a routerLink="login">Cửa hàng của tôi</a>
+                    <li><a routerLink="login">Đăng nhập</a></li>
+                    <li><a routerLink="signup">Đăng ký</a></li>
+            </ul>
+        </ng-template>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-custom  ">
+    <a class="navbar-brand" routerLink=""><img src="assets/img/logo.png" alt="LOGO" style="width : 70px; height :70px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-100">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Vest</a>
+                </li>
+                <li class="nav-item" id="category">
+                    <a class="nav-link" href="#">Đồng Hồ</a>
+                </li>
+                <li class="nav-item" id="category">
+                    <a class="nav-link" href="#">Quần</a>
+                </li>
+                <li class="nav-item" id="category">
+                    <a class="nav-link " href="#">Áo</a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarInput">
+            <ul class="navbar-input">
+                <li id="nav-input" class="nav-item">
+                    <input type="text" placeholder="Nhập sản phẩm" [(ngModel)]="dataSearch" >
+                </li>
+                <li id="nav-icon-search" class="nav-item">
+                    <button (click)="search()"><a class="search-link" ><i class="bi bi-search"></i></a></button>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbavIcon">
+            <ul class="navbar-icon">
+                <li id="nav-icon-cart" class="nav-item icon">
+                    <button routerLink="cart"><i class="bi bi-cart-fill"></i></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

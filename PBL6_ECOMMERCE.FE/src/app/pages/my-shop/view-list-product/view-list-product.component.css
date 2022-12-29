@@ -1,0 +1,122 @@
+.mode-view{
+   
+    border-collapse: collapse;
+    width:100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+h5{
+    margin-left: 30px;
+}
+.line{
+    margin-left: 40px;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #190686,#08e2f1, #ebe7d3);
+    height: 3px;
+    border-radius: 3px;
+    margin-bottom:20px
+  }
+.mode-button{
+    display: flex;
+    flex-direction: row;
+    margin-left:30px
+}
+.mode-button button{
+    width: 120px;
+    height: 47px;
+    background-color: #fcfcfc; /* Green */
+    border: 1px solid rgb(197, 197, 197);
+    color: rgb(8, 1, 1);
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.view-out-of-stock{
+    border-radius: 0px 11px 11px 0px;
+}
+.view-all{
+    border-radius: 11px 0px 0px 11px;
+}
+.mode-button button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+  
+.mode-button button:hover {
+    background-color: #cccccc;
+}
+.search{
+    display: flex;
+    padding-left: 10px;
+    height: 47px;
+    width: 300px; 
+    border: 1px solid rgb(189, 189, 189);
+    align-items: center;
+    border-radius: 11px;
+
+
+}
+.search input{
+    margin-left: 20px;
+    border: none;
+    outline: none;
+
+
+}
+/* table {
+    border-collapse:collapse ;
+    border-radius: 1em;
+    overflow: hidden;
+
+  }
+tr:hover {background-color: coral;}
+ 
+
+th, td {
+    padding: 10px;
+    background: rgb(224, 223, 223);
+    border-bottom: 2px solid white; 
+
+} */
+table {
+    border-collapse: collapse;
+    border-radius: 1em;
+    width: 100%;
+    background-color: #ebeaea;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid white; 
+  }
+  
+  tr:hover {
+    background-color: #E1B42B;
+    border-color: #750000;
+}
+
+
+
+
+body {
+    margin: 1.5em;
+}
+.list-product-of-shop{
+
+    padding-top: 10px;
+    background-color: #cccccc2d;
+    border-radius: 17px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: rgb(10, 78, 204); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #1F4C74 ,rgb(247, 11, 101) , #E1B42B);
+}
+.edit-product{
+    size: 100%;
+}

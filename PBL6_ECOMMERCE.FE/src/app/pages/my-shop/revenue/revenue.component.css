@@ -1,0 +1,148 @@
+.title{
+    margin-left: 35px;
+    padding-left: 20px;
+    Font-size: 20px;
+    margin-bottom: 20px;
+    height: 50px;
+    padding-top: 10px;
+    width: 40%;
+    align-items: center;
+
+}
+.line{
+    margin-left: 40px;
+    background: linear-gradient(45deg, #190686,#08e2f1, #ebe7d3);
+    height: 3px;
+    border-radius: 3px;
+
+}
+.mode-view{
+    margin-top: 20px;
+    margin-left: 10px;
+    border-collapse: collapse;
+    width:100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mode-button{
+    display: flex;
+    flex-direction: row;
+    margin-left:30px
+}
+.mode-button button{
+    width: 120px;
+    height: 47px;
+    background-color: #fcfcfc; /* Green */
+    border: 1px solid rgb(197, 197, 197);
+    color: rgb(8, 1, 1);
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.view-out-of-stock{
+    border-radius: 0px 11px 11px 0px;
+}
+.view-all{
+    border-radius: 11px 0px 0px 11px;
+}
+.mode-button button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+  
+.mode-button button:hover {
+    background-color: #ffe8aa;
+    border-color: #f1b603;
+}
+.account-dropdown{
+    position: absolute;
+    right: 0;
+    list-style: none;
+    background: #ffffff;
+    box-shadow: 1px 2px 2px black;
+    border-radius: 4px;
+}
+.search{
+    display: flex;
+    padding-left: 10px;
+    height: 47px;
+    width: 300px; 
+    border: 1px solid rgb(189, 189, 189);
+    align-items: center;
+    border-radius: 11px;
+
+}
+.search :hover{
+    border-color: #f1b603;
+}
+
+.search input{
+    margin-left: 20px;
+    border: none;
+    outline: none;
+    
+
+}
+.mode button{
+    background-color: #fffffe00;
+    border: none;
+}
+/* table {
+    border-collapse:collapse ;
+    border-radius: 1em;
+    overflow: hidden;
+
+  }
+tr:hover {background-color: coral;}
+ 
+
+th, td {
+    padding: 10px;
+    background: rgb(224, 223, 223);
+    border-bottom: 2px solid white; 
+
+} */
+table {
+    border-collapse: collapse;
+    border-radius: 1em;
+    width: 100%;
+    background-color: #ebeaea;
+    font-size: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #abbdb5, #f4f4f5);
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid white; 
+  }
+  
+  tr:hover {
+    background-color: #E1B42B;
+    border-color: #750000;
+}
+
+
+
+
+body {
+    margin: 1.5em;
+}
+.list-product-of-shop{
+
+    padding-top: 10px;
+    background-color: #fffcfc2d;
+    border-radius: 17px;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 20 px;
+    /* background-color: rgb(10, 78, 204); For browsers that do not support gradients */
+}
+.edit-product{
+    size: 100%;
+}

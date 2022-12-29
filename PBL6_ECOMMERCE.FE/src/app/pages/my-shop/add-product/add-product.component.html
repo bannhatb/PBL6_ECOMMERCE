@@ -1,0 +1,281 @@
+
+<div class = "header">
+    <H5>Thông tin sản phẩm</H5>
+</div>
+<div class = "line"></div>
+<div class = "addproduct">
+    <div class = "view-add-product">
+        <div class = "base-info-product">
+            <div class = "mandatory">
+                <label class="mandatory" style = "width: 70%" >*Tên sản phẩm:</label>
+                <input type="textbox" placeholder = "  Nhập vào"   (change)="typeNamePd($event)">
+            </div>
+            <br>
+            <div class = "select-category">
+                <label class="mandatory" style = "width: 30%">*Loại hàng:</label>
+                <select class="mandatory" style="width: 50%; height:100" (change)="categorySelected($event)" >
+                    <option value={{category.id}} *ngFor="let category of categories">{{category.name}}</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div [ngClass]="{
+            'expand': expand,
+            'show-ckediter': true }">
+            <div class = "description-expand">
+                <div class  = "title-description">
+                    <span class = mandatory-icon>*</span>
+                    <span width = "20%">Mô tả</span>
+                </div>
+                <div>
+                    <i (click)="expand=!expand" class="bi bi-aspect-ratio"></i>
+                </div>
+            </div>
+
+            <div class = "ckeditor">
+                <iframe style = "width: 100%" src="/ckeditor"></iframe>
+            </div>
+        </div>
+        <br>
+        <div class = "list-product-detail"  >
+            <table>
+                <tr>
+                    <td>STT</td>
+                    <td>Kích cỡ</td>
+                    <td>Màu sắc</td>
+                    <td>Số lượng</td>
+                    <td>Giá gốc</td>
+                    <td>Giá bán</td>
+                    <td>Hình ảnh</td>
+                </tr>
+                <tr *ngFor="let pdDetail of listPdDetail; let i = index">
+                    <td>{{i}}</td>
+                    <td>{{pdDetail.size}}</td>
+                    <td>{{pdDetail.color}}</td>
+                    <td>{{pdDetail.amount}}</td>
+                    <td>{{pdDetail.initialPrice}}</td>
+                    <td>{{pdDetail.price}}</td>
+                    <td ><img src = "https://www.facebook.com/DNCT43/photos/a.724595638257442/1137301103653558/?__cft__[0]=AZUSClfKnEHeK9Ppc8nxJtXoL8UBAyH-uTOPzaEZ83jzZFwAk6V_JjRsxxBphr_n418b0Xw0uWOTbV7COxbQ0kh3pUfccnYbcxUnpLM_Ty45_CWkntxcJMCBTjyuTo32jD7Zqy-VIfQRZXlkegSxo53Noj-ssejS9TxdqC1bUZHrngFWuXAGvljyvHGL6pYdOtdde9Uvx2BtYY3jEl9vWb8X&__tn__=EH-R" alt=""></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+
+    </div>
+    <div class = "view-add-product-detail">
+        <h5>Hình ảnh</h5>
+        <br>
+        <div class = "combo-drag-area">
+            <div class = "drag-area mr-2" >
+                <div class = "icon"> <i class="bi bi-image"></i></div>
+                    <header>Drag or Drop to Upload File</header>
+                    <span>OR</span>
+                    <!-- <button>Browse</button> -->
+                    <input type="file" (change)="onSelectFile($event)">
+                <input type="file" hidden>
+            </div>
+        </div>
+        <br>
+        <div class = "product-detail">
+            <h5>Chi tiết sản phẩm</h5>
+        </div>
+        <div  class="mandatory-input">
+            <div class = "edit-label-edit-title">
+                <span class="mandatory-icon">*</span>
+                <span >Size</span>
+            </div>
+            <input type="text" placeholder="  Nhập vào" size="large" resize="none" rows="2" minrows="2" maxlength="Infinity" restrictiontype="input" max="Infinity" min="-Infinity" class="shopee-input__input" (change)="sizeInput($event)">
+        </div>
+        <div class="mandatory-input">
+            <div class = "edit-label-edit-title">
+                <span class="mandatory-icon">*</span>
+                <span >Color</span>
+            </div>
+            <input type="text" placeholder="  Nhập vào" (change)="colorInput($event)">
+            <div class = "edit-label-edit-title">
+                <span class="mandatory-icon">*</span>
+                <span >Số lượng</span>
+            </div>
+            <input type="number" placeholder="  Nhập số lượng" (change)="amountInput($event)">
+        </div>
+        <br>
+        <div class = "price-and-button">
+            <div class = "mandatory-input-price">
+                    <div class = "price-input" >
+                        <span class ="mandatory-icon">*</span>
+                        <span> Giá gốc</span>
+                        <br>
+                        <input type="number" placeholder="  VND" (change)="initialPriceInput($event)">
+                    </div>
+                    <div class = "price-input">
+                        <span class ="mandatory-icon">*</span>
+                        <span> Giá bán</span>
+                        <br>
+                        <input  type="number"  placeholder="  VND" (change)="priceInput($event)">
+                    </div>
+            </div>
+            <br>
+            <div class = "button-confirm-change">
+                <div class = "button-add-productdetail">
+                    <button (click)="addPdDetail()">Thêm sản phẩm</button>
+                </div>
+                <div class = "button-save-product" >
+                    <button (click)=" addProduct()">Lưu sản phẩm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+	<!-- <div class="container">
+		<div class="add_product">
+			<div class="product name cat">
+				<div class="name-product">
+					<p>Tên sản phẩm</p>
+					<input type="text" placeholder="Nhập vào" class="inp_name">
+				</div>
+				<div class="cat-product">
+					<p>Loại hàng</p>
+					<select name="cat-product" class="sel_cat"></select>
+				</div>
+			</div>
+			<div class="product size color">
+				<div class="size-product">
+					<p>Size</p>
+					<input type="text" placeholder="Nhập vào" class="inp_size">
+				</div>
+				<div class="color-product">
+					<p>Color</p>
+					<input type="text" placeholder="Nhập vào" class="inp_color">
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="product num default sell">
+					<div class="num-product">
+						<p>Số lượng</p>
+						<input type="number" name="" class="inp_num">
+					</div>
+					<div class="default-price">
+						<p>Giá gốc</p>
+						<input type="text" placeholder="Nhập vào" class="inp_default">
+					</div>
+					<div class="sell-price">
+						<p>Giá bán</p>
+						<input type="text" placeholder="Nhập vào" class="inp_sell">
+					</div>
+					<div class="description">
+						<p>Mô tả</p>
+						<textarea name="" id="txtArea" cols="37" rows="5"></textarea>
+					</div>
+				</div>
+				<div class="upload-image">
+					<p>Hình ảnh</p>
+					<div class="wrapper">
+						<div class="image">
+							<img src="" alt="">
+						</div>
+						<div class="content">
+							<div class="icon">
+								<i class="fas fa-cloud-upload-alt"></i>
+							</div>
+						</div>
+						<div id="cancel-btn">
+							<i class="fas fa-times"></i>
+						</div>
+					</div>
+					<button onclick="defaultBtnActive()" id="custom-btn">Chọn</button>
+					<input id="default-btn" type="file" hidden>
+				</div>
+			</div>
+			<div class="button">
+				<button class="add">Thêm</button>
+				<button class="save">Lưu</button>
+			</div>
+		</div>
+		<div class="table">
+			<table>
+				<thead>
+					<tr>
+						<th>Column 1</th>
+						<th>Column 2</th>
+						<th>Column 3</th>
+						<th>Column 4</th>
+						<th>Column 5</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Cell 1</td>
+						<td>Cell 2</td>
+						<td>Cell 3</td>
+						<td>Cell 4</td>
+						<td>Cell 5</td>
+					</tr>
+					<tr>
+						<td>Cell 1</td>
+						<td>Cell 2</td>
+						<td>Cell 3</td>
+						<td>Cell 4</td>
+						<td>Cell 5</td>
+					</tr>
+					<tr>
+						<td>Cell 1</td>
+						<td>Cell 2</td>
+						<td>Cell 3</td>
+						<td>Cell 4</td>
+						<td>Cell 5</td>
+					</tr>
+					<tr>
+						<td>Cell 1</td>
+						<td>Cell 2</td>
+						<td>Cell 3</td>
+						<td>Cell 4</td>
+						<td>Cell 5</td>
+					</tr>
+					<tr>
+						<td>Cell 1</td>
+						<td>Cell 2</td>
+						<td>Cell 3</td>
+						<td>Cell 4</td>
+						<td>Cell 5</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+<script>
+	const wrapper = document.querySelector(".wrapper");
+	const fileName = document.querySelector(".file-name");
+	const defaultBtn = document.querySelector("#default-btn");
+	const customBtn = document.querySelector("#custom-btn");
+	const cancelBtn = document.querySelector("#cancel-btn i");
+	const img = document.querySelector("img");
+	let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+	function defaultBtnActive() {
+		defaultBtn.click();
+	}
+	defaultBtn.addEventListener("change", function () {
+		const file = this.files[0];
+		if (file) {
+			const reader = new FileReader();
+			reader.onload = function () {
+				const result = reader.result;
+				img.src = result;
+				wrapper.classList.add("active");
+			}
+			cancelBtn.addEventListener("click", function () {
+				img.src = "";
+				wrapper.classList.remove("active");
+			})
+			reader.readAsDataURL(file);
+		}
+		if (this.value) {
+			let valueStore = this.value.match(regExp);
+			fileName.textContent = valueStore;
+		}
+	});
+</script> -->

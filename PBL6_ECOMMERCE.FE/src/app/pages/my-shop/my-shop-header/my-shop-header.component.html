@@ -1,0 +1,157 @@
+
+
+
+<header class = "header-nav">
+    <nav
+       id="main-navbar"
+       class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+       >
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+              class="navbar-toggler"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              >
+            <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">
+        <img
+             src="http://localhost:4200/assets/img/logo.png"
+             height="50"
+             alt=""
+             loading="lazy"
+             />
+      </a>
+      <!-- Search form -->
+    
+      <!-- Right links -->
+      <ul class="navbar-nav ms-auto d-flex flex-row">
+        <!-- Notification dropdown -->
+        <li class="nav-item dropdown">
+          <a
+             class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+             href="#"
+             id="navbarDropdownMenuLink"
+             role="button"
+             data-mdb-toggle="dropdown"
+             aria-expanded="false"
+             >
+             <i class="bi bi-bell"></i>
+                <span class="badge rounded-pill badge-notification bg-danger"
+                  >1</span
+              >
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Some news</a></li>
+            <li><a class="dropdown-item" href="#">Another news</a></li>
+            <li>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </li>
+          </ul>
+        </li>
+
+
+        <!-- Avatar  (click)="accountOpen=!accountOpen" -->
+        <li class="nav-item dropdown">
+            <button
+                (click)="accountOpen=!accountOpen"
+                class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+                href=""
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+                >
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                    class="rounded-circle"
+                    height="22"
+                    alt=""
+                    loading="lazy" />
+            </button>
+          <!-- <ul *ngIf="accountOpen" class="account-dropdown" aria-labelledby="navbarDropdownMenuLink"> -->
+            
+            <ul *ngIf="accountOpen" class="account-dropdown" class = "account-dropdown" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/myaccount">My profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="/login">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+</header>
+<body class="body">
+    
+    <div class="container" style="margin-top: 100px">
+        <div class="section-content py-3">
+        <div class="row">
+            <aside class="show-nav"> 
+            <!-- ============= COMPONENT ============== -->
+            <nav class="sidebar card py-2 mb-4">
+            <ul class="nav flex-column" id="nav_accordion">
+
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item1" href="#"> <i class="bi bi-bag-check"></i>   Quản lý Sản Phẩm <i class="bi small bi-caret-down-fill"></i> </a>
+                    <ul id="menu_item1" class="submenu collapse" data-bs-parent="#nav_accordion">
+                        <li><a  class="nav-link" routerLink="/myshop/products" routerLinkActive="active" ariaCurrentWhenActive="page"> Tất cả sản phẩm</a></li>
+                        <li><a class="nav-link" routerLink="/myshop/addproduct" routerLinkActive="active" ariaCurrentWhenActive="page">Thêm sản phẩm </a></li>
+                        <li><a class="nav-link" href="#">Chi tiết sản phẩm </a> </li>
+                    </ul>
+
+                </li>
+                <li class="nav-item">		
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item2" href="#"> <i class="bi bi-card-checklist"></i> Quản lý đơn hàng <i class="bi small bi-caret-down-fill"></i> </a>
+                    <ul id="menu_item2" class="submenu collapse" data-bs-parent="#nav_accordion">
+                        <li><a class="nav-link" routerLink="/myshop/manageorder">Tất cả đơn hàng</a></li>
+                        <li><a class="nav-link" href="#">Đơn mới</a></li>
+                        <li><a class="nav-link" href="#">Đơn hủy</a></li>
+                    </ul>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item3" href="#" > <i class="bi bi-graph-up"></i>      Dữ liệu  <i class="bi small bi-caret-down-fill"></i> </a>
+                    <ul id="menu_item3" class="submenu collapse" data-bs-parent="#nav_accordion">
+                        <li><a class="nav-link" href="#">Phân tích bán hàng</a></li>
+                        <li><a class="nav-link" href="#">Biểu đồ</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item4" href="#"> <i class="bi bi-shop-window"></i> Quản lý shop <i class="bi small bi-caret-down-fill"></i> </a>
+                    <ul id="menu_item4" class="submenu collapse" data-bs-parent="#nav_accordion">
+                        <li><a class="nav-link" href="#">Hồ sơ Shop</a></li>
+                        <li><a class="nav-link" href="#">Biểu đồ</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/myshop/revenue"><i class="bi bi-wallet"></i>  Doanh thu </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-patch-question"></i> Trợ giúp </a>
+                </li>
+            </ul>
+            </nav>
+            </aside>
+            <div class="main-of-nav">
+              <ul class="breadcrumb">
+                <li><a href="#">Cửa hàng</a></li>
+                <li><a href="#">Thêm sản phẩm</a></li>
+              </ul>
+              <div>
+                <router-outlet></router-outlet>
+              </div>
+            </div> 
+           
+        </div>
+      </div>
+
+  </div><!-- container //  -->
+</body>

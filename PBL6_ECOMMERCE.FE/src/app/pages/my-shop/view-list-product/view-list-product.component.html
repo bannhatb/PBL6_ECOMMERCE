@@ -1,0 +1,69 @@
+<div>
+  <h5>Tất cả sản phẩm</h5>
+</div>
+<div class = "line"></div>
+<div class = "mode-view">
+    <div class = "mode-button">
+        <button class = "view-all">Tất cả</button>
+        <button class = "view-stocking">Sẵn sàng</button>
+        <button class = "view-out-of-stock">Bán hết</button>
+    </div>
+    <div class = "search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder = "Tìm kiếm">
+    </div>
+</div>
+<div class = "list-product-of-shop">
+    <div>
+    <table class="data">
+        <tr>
+          <th>STT</th>
+          <th>Mã sản phẩm</th>
+          <th>Tên sản phẩm</th>
+          <th>Loại hàng</th>
+          <th>Tình trạng</th>
+          <th>Đã bán</th>
+          <th>Tồn kho</th>
+          <th>Thay đổi</th>
+        </tr>
+        <tr (click)="show_detail(longContent)">
+          <td>1</td>
+          <td>10</td>
+          <td>Áo dài tay nam</td>
+          <td>Áo sơ mi</td>
+          <td>Còn hàng</td>
+          <td>300000</td>
+          <td>200000</td>
+          <td>10</td>
+          <td>100</td>
+          <td><i class="bi bi-plus-circle"></i></td>
+          
+        </tr>
+        <tr (click)="show_detail(longContent)">
+            <td>2</td>
+            <td>11</td>
+            <td>Áo dài tay nam ấm dành cho mùa đông</td>
+            <td>Áo khoác</td>
+            <td>Còn hàng</td>
+            <td>300000</td>
+            <td>200000</td>
+            <td>10</td>
+            <td>100</td>
+            <td><i class="bi bi-plus-circle"></i></td>
+          </tr>
+      </table>
+    </div>
+
+</div>
+<ng-template #longContent let-modal>
+  <div class="modal-header">
+		<h4 class="modal-title">Chi tiết sản phẩm</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+
+  <div class="modal-body">
+    <div class = "edit-product">
+      <app-product-detail></app-product-detail>
+    </div>
+  </div>
+</ng-template>

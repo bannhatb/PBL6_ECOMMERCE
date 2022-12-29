@@ -1,0 +1,156 @@
+.home-content{
+  background-color:white;
+}
+
+
+/* slide show */
+.slider{
+  width: 100%;
+  height: 600px;
+  /* border-radius: 10px; */
+  overflow: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 480px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width:100%;
+  /* height: 600px; */
+  object-fit: cover;
+}
+
+.radio-btn{
+  padding-left: 40%;
+}
+/*css for manual slide navigation*/
+
+.navigation-manual{
+  position: absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  margin-left: 20%;
+}
+
+.manual-btn{
+  border: 2px solid gray;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+  margin-top: 130px;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+
+}
+
+.manual-btn:hover{
+  background: gray;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/*css for automatic navigation*/
+
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  width: 800px;
+  justify-content: center;
+  margin-top: 570px;
+  margin-left: 20%;
+}
+
+.navigation-auto div{
+  border: 2px solid gray;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: gray;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: gray;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: gray;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background: gray;
+}
+
+
+/* product */
+
+
+
+/* product */
+
+.title-product
+{
+  height: 60px;
+  border-style: solid;
+  border-color: #d9d9f2;
+  border-width: 2px;
+  font-weight: bold;
+  color: gray;
+  margin: auto;
+  padding: 15px;
+  border-radius:5px 5px 5px 5px;
+}
+
+.col{
+  height: 100px;
+}
+
+.pd-wrapper
+{
+  height: 100%;
+}
+
+.pd-wrapper:hover{
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+.banner{
+  padding-right: 100px;
+}

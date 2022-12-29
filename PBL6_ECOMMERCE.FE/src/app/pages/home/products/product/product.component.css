@@ -1,0 +1,46 @@
+.card{
+  height: 100%;
+}
+.pi-img-wrapper > img{
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 100%;
+  height: 70%;
+  object-fit: fill;
+  transition: box-shadow .3s;
+}
+
+.card-body :hover{
+  color : rgb(176, 91, 16);
+}
+
+
+.card-footer{
+  background-color: white;
+  border:none;
+  justify-content: space-between;
+}
+.btn{
+  float: right
+}
+.btn-secondary{
+  display:inline-block;
+  border-radius: 0%;
+  background-color: rgb(30, 69, 105);
+}
+.btn-secondary:hover{
+  background-color: white;
+  color: gray;
+}
+
+.pd-price {
+  display:inline-block;margin-right:10px;
+  color : rgb(176, 91, 16);
+}
+.btn-secondary {display:inline-block;}
+/*
+.pi-img-wrapper > img :hover{
+  box-shadow: 10px 10px 5px lightblue;
+} */
+
+

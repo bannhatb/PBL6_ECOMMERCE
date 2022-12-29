@@ -1,0 +1,94 @@
+<!-- <app-header></app-header> -->
+<!-- <img src="/assets/img/5.jpg" alt=""> -->
+<div class="home-content">
+    <!--image slider start-->
+    <div class="slide-show">
+        <div class="slider">
+            <div class="slides">
+                <!--radio buttons start-->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!--radio buttons end-->
+                <!--slide images start-->
+                <div class="slide first">
+                    <img src="https://theme.hstatic.net/200000053174/1000840984/14/home_slider_image_1.jpg?v=7126" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://theme.hstatic.net/200000053174/1000840984/14/home_slider_image_2.jpg?v=7126" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://theme.hstatic.net/200000053174/1000840984/14/home_slider_image_3.jpg?v=7126" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://theme.hstatic.net/200000053174/1000840984/14/home_slider_image_1.jpg?v=7126" alt="">
+                </div>
+                <!--slide images end-->
+                <!--automatic navigation start-->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+                <!--automatic navigation end-->
+            </div>
+            <!--manual navigation start-->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+
+            </div>
+            <!--manual navigation end-->
+        </div>
+        <!--image slider end-->
+
+        <script type="text/javascript">
+            var counter = 1;
+            setInterval(function() {
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if (counter > 4) {
+                    counter = 1;
+                }
+            }, 5000);
+        </script>
+    </div>
+    <br>
+    <div class="container mt-4 mb-4">
+    <div class="title-product"><p>Đề xuất cho bạn</p></div>
+    <div class="row">
+      <div class="col-lg-3 mt-3 pb-5" *ngFor="let product of productData; let i=index">
+        <div class="pd-wrapper" >
+          <app-product [product]="product">
+          </app-product>
+        </div>
+      </div>
+    </div>
+  <!-- </div>
+    <br>
+    <h1>List Category</h1>
+    <div class="row">
+        <div class="col-12 col-md-4" *ngFor="let category of categories">
+            <app-category [category]="category" (deleteCategoryEvent)="onDeleteCategoryEvent($event)" [class]="category.id % 2 === 0 ? 'event' : 'odd'" title="ababa {{category.title}}">
+            </app-category>
+        </div>
+    </div> -->
+
+    <!-- <div class="container mt-4 mb-4">
+        <div class="row">
+            <div class="col-lg-6 mt-3 " *ngFor="let banner of banners; let i=index">
+                <div class="banner">
+                    <app-banner [banner]="banner"></app-banner>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+<br>
+<app-brand></app-brand>
+<br>
+<!-- <app-footer></app-footer> -->

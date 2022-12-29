@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">
+            {{category.id}}
+        </h3>
+    </div>
+    <div class="card-body">
+        {{category.name}}
+    </div>
+    <div class="card-footer">
+        <a [routerLink]="['/edit-category/' + category.id]" routerLinkActive="router-link-active" class="btn btn-outline-warning">
+      Edit
+    </a>
+        <button type="button" class="ml-3 btn btn-outline-danger " (click)="onDeletedCategory()">
+      Delete
+    </button>
+    </div>
+</div>

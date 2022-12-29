@@ -1,0 +1,236 @@
+.container {
+    position: relative;
+}
+
+.product-details-pic-item--large {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+}
+
+.product-details-pic-item--small {
+    border-radius: 1%;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+}
+
+.product-details-pic-item--small {
+    border-radius: 1%;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+}
+
+.product-details-pic-item--small :hover {
+    border-style: solid;
+    border-color: orange;
+    border-width: 10px;
+}
+
+
+#img-hover>img:hover {
+    border-style: solid;
+    border-color: gray;
+    border-width: 2px;
+
+}
+
+.product-details-pic {
+    min-width: 50%;
+}
+
+.mat-ink-bar {
+    visibility: visible;
+    left: 0px;
+    width: 80px !important;
+}
+
+.pd-name {
+    border-bottom: 1px solid rgb(232, 231, 231);
+}
+
+.product__details__rating {
+    border-bottom: 1px solid rgb(232, 231, 231);
+    margin-bottom: 4;
+}
+
+.pd-reviews {
+    padding-left: 2%;
+    display: inline-block;
+}
+
+.product__details__price {
+    font-family: sans-serif;
+    font-size: 200%;
+    color: rgb(30, 69, 105);
+    border-bottom: 1px solid rgb(232, 231, 231);
+}
+.pd-size, .pd-color{
+  border-bottom: 1px solid rgb(232, 231, 231);
+}
+.size-title,.color-title{
+  margin-right: 30px;
+  width: 80px;
+  height: 50px;
+}
+.btn-default{
+  border: solid;
+  border-color: gray ;
+  border-width: 1px;
+  padding: 4px 7px 4px 7px;
+  margin-right: 30px;
+  text-align: center;
+  width: 80px;
+  border-radius: 4%;
+}
+ .list-size>p,.list-color>p{
+  border: solid;
+  border-color: gray ;
+  border-width: 1px;
+  padding: 4px 7px 4px 7px;
+  margin-right: 30px;
+  text-align: center;
+  width: 80px;
+  border-radius: 4%;
+}
+/* .btn-check:active+.btn-outline-danger, .btn-check:checked+.btn-outline-danger, .btn-outline-danger.active, .btn-outline-danger.dropdown-toggle.show, .btn-outline-danger:active{
+  color: #fff;
+  background-color: rgb(30, 69, 105);
+  border-color: rgb(30, 69, 105);
+} */
+.btn-outline-danger{
+  border: solid;
+  border-color: gray ;
+  border-width: 1px;
+  padding: 4px 7px 4px 7px;
+  margin-right: 30px;
+  text-align: center;
+  width: 90px;
+  border-radius: 4%;
+  color: black;
+  height:33px
+}
+.btn-outline-danger:hover{
+  border-color: gray ;
+  background-color: white;
+}
+.btn-check:checked+.btn-outline-danger{
+  color: #fff;
+  background-color: rgb(30, 69, 105);
+  border-color: rgb(30, 69, 105);
+}
+.btn-check:focus+.btn-outline-danger{
+  box-shadow: 0 0 0 0.25rem white;
+}
+
+
+
+.btn-change {
+  border: solid;
+  border-color: rgb(240, 17, 17) ;
+  border-width: 1px;
+  padding: 4px 7px 4px 7px;
+  margin-right: 30px;
+  text-align: center;
+  width: 80px;
+  border-radius: 4%;
+}
+.pd-overview {
+    height: 130px;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(232, 231, 231);
+}
+
+.pro-qty {
+    height: 60px;
+    position: relative;
+}
+
+.product__details__quantity {
+    border-bottom: 1px solid rgb(232, 231, 231);
+}
+
+.quantity {
+    display: inline-block;
+}
+
+.pro-qty>button {
+    height: 50px;
+    width: 50px;
+    background: rgb(30, 69, 105);
+    border: none;
+    color: white;
+}
+
+.qty-number {
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border: none;
+    background-color: rgb(30, 69, 105);
+    color: white;
+}
+
+.btn-secondary {
+    margin-left: 50px;
+    height: 50px;
+    padding-top: 7px;
+    display: inline-block;
+    background-color: rgb(30, 69, 105);
+    border: none;
+    border-radius: 0%;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(187, 173, 173, 0.733);
+    color: rgba(0, 0, 0, 0.707);
+}
+
+.customer-review {
+    padding-left: 10px;
+}
+
+.btn-primary {
+    margin-top: 10px;
+    background-color: rgb(240, 232, 232);
+    border: none;
+    border-radius: 0%;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.btn-primary:hover {
+    background-color: rgba(187, 173, 173, 0.733);
+    color: rgba(0, 0, 0, 0.707);
+}
+
+.related__product__title>h2 {
+    text-align: center;
+}
+
+hr.border-bottom {
+    border: 10px solid gray;
+    border-radius: 5px;
+}
+
+.col {
+    height: 100px;
+}
+
+.pd-wrapper {
+    height: 100%;
+}
+
+.pd-wrapper:hover {
+    box-shadow: 10px 10px 5px lightblue;
+}
+.mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab{
+  width: 200px;
+}
+
+/* .tab-css{
+  width:700px;
+  color: red
+} */
